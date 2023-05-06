@@ -1,10 +1,11 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import fetchWeather from './API/fetchWeather.js';
+import "./App.css";
+import { useState, useEffect } from "react";
+import fetchWeather from "./API/fetchWeather.js";
+import UserInput from "./components/Input.jsx";
 
 function App() {
-  const [background, setBackground] = useState('');
-  const [city, setCity] = useState('Vienna');
+  const [background, setBackground] = useState("");
+  const [city, setCity] = useState("Vienna");
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
@@ -22,9 +23,15 @@ function App() {
     }
   }, [weatherData]);
 
+  const onUserInput = (e) => {
+    setCity(e);
+    console.log(city);
+  };
+
   return (
-    <div style={{ backgroundImage: background }} className='mainpage-bg'>
-      <p>{weatherData ? weatherData.weather[0].description : 'Loading...'}</p>
+    <div style={{ backgroundImage: background }} className="mainpage-bg">
+      <UserInput onUserInput={onUserInput} />
+      <p>{weatherData ? weatherData.weather[0].description : "Loading..."}</p>
     </div>
   );
 }
