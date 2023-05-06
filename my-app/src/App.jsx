@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import fetchWeather from "./API/fetchWeather.js";
 import DailyForecast from "./components/DailyForecast";
 
+fetchWeather("tokyo");
+
 function App() {
 	const [background, setBackground] = useState("");
 	const [city, setCity] = useState("Vienna");
@@ -26,7 +28,7 @@ function App() {
 	return (
 		<div style={{ backgroundImage: background }} className="mainpage-bg">
 			<p>{weatherData ? weatherData.weather[0].description : "Loading..."}</p>
-			<DailyForecast></DailyForecast>
+			<DailyForecast weatherData={() => fetchWeather("tokyo")}></DailyForecast>
 		</div>
 	);
 }
