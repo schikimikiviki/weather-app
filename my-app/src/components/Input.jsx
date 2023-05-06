@@ -1,17 +1,24 @@
 import { useState } from "react";
-import React from "react";
+import "./Input.css";
 
 function UserInput({ onUserInput }) {
   const [userInput, setUserInput] = useState("");
 
   const handleCityChange = (event) => {
-    setUserInput(event.target.value);
-    onUserInput(event.target.value);
+    const inputValue = event.target.value;
+    setUserInput(inputValue);
+    onUserInput(inputValue);
   };
 
   return (
-    <div>
-      <input type="text" value={userInput} onChange={handleCityChange} />
+    <div className="input-div">
+      <input
+        placeholder="Enter a city"
+        className="input-field"
+        type="text"
+        value={userInput}
+        onChange={handleCityChange}
+      />
     </div>
   );
 }

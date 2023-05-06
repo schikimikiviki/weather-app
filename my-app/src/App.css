@@ -6,4 +6,13 @@ html * {
 }
 
 .mainpage-bg {
+  width: 100vw;
+  height: 100vh;
+}
+
+.error {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
 }
