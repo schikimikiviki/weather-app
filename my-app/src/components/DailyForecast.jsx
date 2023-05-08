@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./DailyForecast.css";
 
 const DailyForecast = ({ data }) => {
 	const [celsius, setCelsius] = useState(true);
@@ -21,7 +22,12 @@ const DailyForecast = ({ data }) => {
 
 	return (
 		<div className="container">
-			<div className="icon"></div>
+			<div className="icon">
+				<img
+					alt="icon"
+					src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+				/>
+			</div>
 			<div className="data">
 				<span>Today</span>
 				<div className="city-name">{data.name}</div>
@@ -30,12 +36,7 @@ const DailyForecast = ({ data }) => {
 					{unit}{" "}
 				</div>
 				<button onClick={() => changeTemp()}>°F</button>
-				<div className="weather">
-					<img
-						alt="icon"
-						src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-					/>
-				</div>
+				<div className="weather">{data.weather[0].main}</div>
 			</div>
 		</div>
 	);
