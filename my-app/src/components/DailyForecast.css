@@ -1,13 +1,41 @@
 .container {
 	background-color: rgba(255, 255, 255, 0.3);
 	border-radius: 20px;
-	max-width: 60%;
-	height: 60%;
+	width: 80%;
+	height: 50%;
 	display: flex;
+	z-index: 1;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
-	align-self: center;
 }
 
-.icon {
+.icon,
+.data {
 	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.convert-button {
+	border-radius: 25px;
+	border: none, solid, gold;
+}
+
+.data {
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	align-content: flex-start;
+}
+
+.data > div,
+.data > h1 {
+	width: 100%;
+	text-align: center;
+}
+
+.city-name {
+	font-size: 40px;
 }

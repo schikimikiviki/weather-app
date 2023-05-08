@@ -24,18 +24,24 @@ const DailyForecast = ({ data }) => {
 		<div className="container">
 			<div className="icon">
 				<img
+					id="icon"
 					alt="icon"
 					src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+					min-width="60%"
+					min-height="70%"
 				/>
 			</div>
 			<div className="data">
 				<span>Today</span>
-				<div className="city-name">{data.name}</div>
+				<h1 className="city-name">{data.name}</h1>
 				<div className="temperature">
 					Temperature: {temperature}
 					{unit}{" "}
+					<button className="convert-button" onClick={() => changeTemp()}>
+						°F
+					</button>
 				</div>
-				<button onClick={() => changeTemp()}>°F</button>
+
 				<div className="weather">{data.weather[0].main}</div>
 			</div>
 		</div>

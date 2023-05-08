@@ -1,11 +1,12 @@
 .input-field {
-  border-radius: 20px;
-  padding: 5px;
+	border-radius: 20px;
+	padding: 5px;
 }
 
 .input-div {
-  display: flex;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	padding: 20px;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
