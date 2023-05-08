@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import fetchWeather from "./API/fetchWeather.js";
 import UserInput from "./components/Input.jsx";
 import WeeklyForecast from "./components/WeeklyForecast";
+import DailyForecast from "./components/DailyForecast";
 
 function App() {
 	const [background, setBackground] = useState("");
@@ -64,6 +65,8 @@ function App() {
 		setCity(e);
 	};
 
+	console.log("testing data", weatherData);
+
 	return (
 		<div
 			style={{
@@ -75,6 +78,7 @@ function App() {
 			className="mainpage-bg"
 		>
 			<UserInput onUserInput={onUserInput} />
+			{weatherData && <DailyForecast data={weatherData} />}
 			<div className="error"> {errorMessage && <p>{errorMessage}</p>}</div>
 			{weatherData && <WeeklyForecast data={weatherData} />}
 		</div>
