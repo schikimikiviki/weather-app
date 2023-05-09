@@ -4,7 +4,7 @@ const fetchWeather = async (city) => {
 `
   );
   const weatherData = await response.json();
-  console.log(weatherData);
+  //console.log(weatherData);
   return weatherData;
 };
 
