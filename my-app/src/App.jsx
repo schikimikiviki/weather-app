@@ -33,6 +33,12 @@ function App() {
               image:
                 "https://images.pexels.com/photos/13207700/pexels-photo-13207700.jpeg",
             });
+          } else if (response.main.temp < 290 && response.main.temp > 270) {
+            //warm
+            setBackground({
+              image:
+                "https://images.pexels.com/photos/954929/pexels-photo-954929.jpeg",
+            });
           } else if (response.main.temp < 270 && response.main.temp > 250) {
             //cold but not snowy
             setBackground({
@@ -80,6 +86,7 @@ function App() {
       <UserInput onUserInput={onUserInput} />
       {weatherData && <DailyForecast data={weatherData} />}
       <div className="error"> {errorMessage && <p>{errorMessage}</p>}</div>
+
       {weatherData && <WeeklyForecast data={weatherData} />}
     </div>
   );
