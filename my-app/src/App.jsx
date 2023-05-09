@@ -65,6 +65,8 @@ function App() {
     setCity(e);
   };
 
+  console.log("testing data", weatherData);
+
   return (
     <div
       style={{
@@ -76,9 +78,8 @@ function App() {
       className="mainpage-bg"
     >
       <UserInput onUserInput={onUserInput} />
+      {weatherData && <DailyForecast data={weatherData} />}
       <div className="error"> {errorMessage && <p>{errorMessage}</p>}</div>
-      {weatherData && <DailyForecast weatherData={weatherData} />}
-
       {weatherData && <WeeklyForecast data={weatherData} />}
     </div>
   );
